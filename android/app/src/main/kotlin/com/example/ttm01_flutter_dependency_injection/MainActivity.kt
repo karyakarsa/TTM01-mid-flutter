@@ -1,5 +1,4 @@
-package com.example.ttm01_flutter_dependency_injection
-
+package com.myblog
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity: FlutterActivity()

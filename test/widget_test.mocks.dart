@@ -60,4 +60,21 @@ class MockPostRepositoryImpl extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Either<String, List<_i5.Post>>>);
+
+  @override
+  _i4.Future<_i2.Either<String, _i5.Post>> getdetailPost(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getdetailPost,
+          [id],
+        ),
+        returnValue: _i4.Future<_i2.Either<String, _i5.Post>>.value(
+            _FakeEither_0<String, _i5.Post>(
+          this,
+          Invocation.method(
+            #getdetailPost,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<String, _i5.Post>>);
 }

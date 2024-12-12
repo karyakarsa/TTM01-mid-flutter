@@ -5,6 +5,7 @@ import 'package:ttm01_flutter_dependency_injection/data/models/post.model.dart';
 
 abstract class PostRemoteDataSource {
   Future<List<PostModel>> fetchAll();
+  Future<PostModel> detailPosts(int id);
 }
 
 class PostRemoteDataSourceImpl extends GetConnect
@@ -33,5 +34,20 @@ class PostRemoteDataSourceImpl extends GetConnect
 
     logger.i('Posts fetched successfully', error: response.body.length);
     return (response.body as List).map((e) => PostModel.fromJson(e)).toList();
+  }
+
+  @override
+  Future<PostModel> detailPosts(int id) async {
+    logger.i('Fetching posts');
+    final response = await get('/posts/$id');
+    if (response.status.hasError) {
+      logger.e('Error fetching posts: ${response.statusCode}',
+          error: response.body);
+      throw ServerException(response.statusText!,
+          statusCode: response.statusCode!, details: response.body);
+    }
+
+    logger.i('Posts fetched successfully', error: response.body.length);
+    return PostModel.fromJson(response.body);
   }
 }

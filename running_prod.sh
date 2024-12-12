@@ -1,0 +1,1 @@
+flutter run --flavor production -t lib/main.dart

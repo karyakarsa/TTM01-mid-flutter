@@ -7,13 +7,14 @@ import 'package:ttm01_flutter_dependency_injection/data/post_repository.impl.dar
 import 'package:ttm01_flutter_dependency_injection/domain/entities/post.dart';
 import 'package:ttm01_flutter_dependency_injection/domain/post_repository.dart';
 import 'package:ttm01_flutter_dependency_injection/ui/app.dart';
+import 'package:ttm01_flutter_dependency_injection/ui/controllers/home_controller.dart';
 
 import 'widget_test.mocks.dart';
 
 @GenerateMocks([PostRepositoryImpl])
 void main() {
   final PostRepository mockedRepository = MockPostRepositoryImpl();
-
+  Get.lazyPut(() => HomeController(repo: mockedRepository));
   Get.put<PostRepository>(mockedRepository);
 
   testWidgets(

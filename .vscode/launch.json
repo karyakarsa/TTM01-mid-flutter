@@ -10,16 +10,26 @@
       "type": "dart"
     },
     {
-      "name": "ttm01_flutter_dependency_injection (profile mode)",
+      "name": "staging",
       "request": "launch",
+      "program": "/Users/rdiasp/Documents/project/TTM01-mid-flutter/lib/main_staging.dart",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterMode": "debug",
+      "args": [
+        "--flavor",
+        "staging"
+      ]
     },
     {
-      "name": "ttm01_flutter_dependency_injection (release mode)",
+      "name": "prod",
       "request": "launch",
+      "program": "/Users/rdiasp/Documents/project/TTM01-mid-flutter/lib/main.dart",
       "type": "dart",
-      "flutterMode": "release"
+      "flutterMode": "release",
+      "args": [
+        "--flavor",
+        "staging"
+      ]
     }
   ]
 }

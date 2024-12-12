@@ -22,4 +22,14 @@ class PostRepositoryImpl implements PostRepository {
       return Left(e.message);
     }
   }
+
+  @override
+  Future<Either<String, Post>> getdetailPost(int id) async {
+    try {
+      final posts = await _remote.detailPosts(id);
+      return Right(posts.toEntity());
+    } on ServerException catch (e) {
+      return Left(e.message);
+    }
+  }
 }

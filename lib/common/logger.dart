@@ -1,3 +1,6 @@
 import 'package:logger/logger.dart';
 
-final logger = Logger();
+Logger _logger = Logger(); // Private default logger
+
+Logger get logger => _logger;
+set logger(Logger newLogger) => _logger = newLogger;
